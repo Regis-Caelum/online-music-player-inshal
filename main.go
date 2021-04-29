@@ -39,8 +39,8 @@ func main() {
 	http.HandleFunc("/form", formHandler)
 	http.HandleFunc("/hello", helloHandler)
 
-	fmt.Printf("Starting server at port available\n")
 	port := os.Getenv("PORT")
+	fmt.Printf("Starting server at port available %v\n", port)
 	if err := http.ListenAndServe(port, nil); err != nil {
 		log.Fatal(err)
 	}
