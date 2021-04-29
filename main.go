@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 )
 
 func formHandler(w http.ResponseWriter, r *http.Request) {
@@ -39,7 +40,8 @@ func main() {
 	http.HandleFunc("/hello", helloHandler)
 
 	fmt.Printf("Starting server at port available\n")
-	if err := http.ListenAndServe(":0", nil); err != nil {
+	port := os.Getenv("PORT")
+	if err := http.ListenAndServe(port, nil); err != nil {
 		log.Fatal(err)
 	}
 }
