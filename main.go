@@ -41,7 +41,7 @@ func main() {
 
 	port := os.Getenv("PORT")
 	fmt.Printf("Starting server at port available %v\n", port)
-	if err := http.ListenAndServe(port, nil); err != nil {
+	if err := http.ListenAndServe(":"+port, nil); err != nil {
 		log.Fatal(err)
 	}
 }
