@@ -1,1 +1,1 @@
-web: ./main -p $PORT
+web: ./main -p 5000
